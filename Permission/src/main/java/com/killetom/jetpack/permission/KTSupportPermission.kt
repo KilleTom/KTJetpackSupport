@@ -30,8 +30,7 @@ class KTSupportPermission() : IPermissionHelper {
     private var currentMultilplePermissionCheckAction: IMultilplePermissionCheckAction? = null
 
 
-    @Override
-    fun attach(activity: ComponentActivity) {
+    override fun attach(activity: ComponentActivity) {
 
         singlePermissionLauncher = activity.registerForActivityResult(
             ActivityResultContracts.RequestPermission(),
@@ -44,8 +43,8 @@ class KTSupportPermission() : IPermissionHelper {
         )
     }
 
-    @Override
-    fun detach(activity: ComponentActivity) {
+
+    override fun detach(activity: ComponentActivity) {
 
         singlePermissionLauncher?.unregister()
         multiplePermissionLauncher?.unregister()
@@ -54,8 +53,8 @@ class KTSupportPermission() : IPermissionHelper {
         multiplePermissionLauncher = null
     }
 
-    @Override
-    fun attach(fragment: Fragment) {
+
+    override fun attach(fragment: Fragment) {
 
         singlePermissionLauncher = fragment.registerForActivityResult(
             ActivityResultContracts.RequestPermission(),
@@ -68,8 +67,7 @@ class KTSupportPermission() : IPermissionHelper {
         )
     }
 
-    @Override
-    fun detach(fragment: Fragment) {
+    override fun detach(fragment: Fragment) {
 
         singlePermissionLauncher?.unregister()
         multiplePermissionLauncher?.unregister()
@@ -78,8 +76,7 @@ class KTSupportPermission() : IPermissionHelper {
         multiplePermissionLauncher = null
     }
 
-    @Override
-    fun requestPermission(
+    override fun requestPermission(
         permission: String,
         call: ISinglePermissionCheckAction.() -> Unit) {
 
@@ -92,8 +89,7 @@ class KTSupportPermission() : IPermissionHelper {
     }
 
 
-    @Override
-    fun requestPermission(
+    override fun requestPermission(
         permissions: Array<String>,
         call: IMultilplePermissionCheckAction.() -> Unit) {
 
