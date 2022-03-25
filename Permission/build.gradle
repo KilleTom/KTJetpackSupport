@@ -2,9 +2,8 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
-//    id 'com.github.dcendents.android-maven'
 }
-group = 'com.github.1986545332@qq.com'
+
 
 task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -60,7 +59,7 @@ afterEvaluate {
                 from components.release // 表示发布 release（jitpack 都不会使用到）
 
                 // You can then customize attributes of the publication as shown below.
-                groupId "com.killetom.jetpack.permission" // 包名
+                groupId "com.killetom.jetpack" // 包名
                 artifactId "permission" // module的名字
                 version permissionVersionName // 版本号
                 artifact generateSourcesJar
