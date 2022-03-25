@@ -36,7 +36,7 @@ android {
 
 dependencies {
 
-    implementation project(path: ':Permission')
+    implementation 'com.github.KilleTom:KTJetpackSupport:v0.0.2-alpha'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
