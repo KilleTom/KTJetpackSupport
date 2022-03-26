@@ -43,34 +43,34 @@ task generateSourcesJar(type: Jar) {
     classifier 'sources'
 }
 
-afterEvaluate {
-    publishing {
-
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                // Applies the component for the release build variant.
-                from components.release // 表示发布 release（jitpack 都不会使用到）
-
-                // You can then customize attributes of the publication as shown below.
-                groupId "com.killetom.jetpack.emptymodule" // 包名
-                artifactId "emptymodule" // module的名字
-                version emptyVersionName // 版本号
-                artifact generateSourcesJar
-            }
-        }
-
-    }
-    repositories {
-        // 下面这部分，不是很清楚加不加，但是最后加上
-//        maven {
-////         change URLs to point to your repos, e.g. http://my.org/repo
-//            allowInsecureProtocol true
-//            def mavenDirPath = file(project.rootDir.absolutePath + path) // 本地存放地址
-//            url "file://${mavenDirPath.absolutePath}"
+//afterEvaluate {
+//    publishing {
+//
+//        publications {
+//            // Creates a Maven publication called "release".
+//            release(MavenPublication) {
+//                // Applies the component for the release build variant.
+//                from components.release // 表示发布 release（jitpack 都不会使用到）
+//
+//                // You can then customize attributes of the publication as shown below.
+//                groupId "com.killetom.jetpack.emptymodule" // 包名
+//                artifactId "emptymodule" // module的名字
+//                version emptyVersionName // 版本号
+//                artifact generateSourcesJar
+//            }
 //        }
-    }
-}
+//
+//    }
+//    repositories {
+//        // 下面这部分，不是很清楚加不加，但是最后加上
+////        maven {
+//////         change URLs to point to your repos, e.g. http://my.org/repo
+////            allowInsecureProtocol true
+////            def mavenDirPath = file(project.rootDir.absolutePath + path) // 本地存放地址
+////            url "file://${mavenDirPath.absolutePath}"
+////        }
+//    }
+//}
 
 
 dependencies {

@@ -4,4 +4,4 @@
 rootProject.name = "KTJetpackSupport"
 include ':app'
 include ':Permission'
-include ':EmptyModule'
+
