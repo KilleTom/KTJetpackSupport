@@ -49,7 +49,7 @@ android {
 
 }
 
-/*afterEvaluate {
+afterEvaluate {
     publishing {
 
         publications {
@@ -69,14 +69,14 @@ android {
     }
     repositories {
         // 下面这部分，不是很清楚加不加，但是最后加上
-//        maven {
-            // change URLs to point to your repos, e.g. http://my.org/repo
-//            allowInsecureProtocol true
-//            def mavenDirPath = file(project.rootDir.absolutePath + path) // 本地存放地址
-//            url "file://${mavenDirPath.absolutePath}"
-//        }
+        maven {
+//             change URLs to point to your repos, e.g. http://my.org/repo
+            allowInsecureProtocol true
+            def mavenDirPath = file(project.rootDir.absolutePath + path) // 本地存放地址
+            url "file://${mavenDirPath.absolutePath}"
+        }
     }
-}*/
+}
 
 
 dependencies {
