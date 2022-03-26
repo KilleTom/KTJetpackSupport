@@ -49,7 +49,7 @@ android {
 
 }
 
-afterEvaluate {
+/*afterEvaluate {
     publishing {
 
         publications {
@@ -76,7 +76,7 @@ afterEvaluate {
 //            url "file://${mavenDirPath.absolutePath}"
 //        }
     }
-}
+}*/
 
 
 dependencies {
